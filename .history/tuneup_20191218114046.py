@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 """Tuneup assignment"""
 __author__ = 'Enrique Galindo'
-
 import timeit
 import cProfile
 from collections import Counter
@@ -29,21 +27,17 @@ def profile(func):
         return value
     return inner_wrapper
 
-
+    
 def read_movies(src):
     """Returns a list of movie titles"""
     print('Reading file: {}'.format(src))
     with open(src, 'r') as file_:
         return file_.read().splitlines()
-
-
 def is_duplicate(title, movies):
     """returns True if title is within movies list"""
     if title in movies:
         return True
     return False
-
-
 @profile
 def find_duplicate_movies(src):
     """Returns a list of duplicate movies from a src list"""
@@ -51,8 +45,6 @@ def find_duplicate_movies(src):
     movie_counter = Counter(movies)
     duplicates = [movie for movie, count in movie_counter.items() if count > 1]
     return duplicates
-
-
 def timeit_helper():
     """Part A:  Obtain some profiling measurements using timeit"""
     time = timeit.Timer(stmt='pass', setup='pass')
@@ -60,8 +52,6 @@ def timeit_helper():
     average = min(result)/float(5)
     print('Best time across 7 repeats of 5 runs per repeat:\
           {} sec'.format(average))
-
-
 def main():
     """Computes a list of duplicate movie entries"""
     result = find_duplicate_movies('movies.txt')

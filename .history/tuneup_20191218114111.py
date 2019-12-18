@@ -3,7 +3,6 @@
 
 """Tuneup assignment"""
 __author__ = 'Enrique Galindo'
-
 import timeit
 import cProfile
 from collections import Counter
