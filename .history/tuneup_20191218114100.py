@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 """Tuneup assignment"""
 __author__ = 'Enrique Galindo'
-
 import timeit
 import cProfile
 from collections import Counter
@@ -61,7 +59,7 @@ def timeit_helper():
     print('Best time across 7 repeats of 5 runs per repeat:\
           {} sec'.format(average))
 
-
+          
 def main():
     """Computes a list of duplicate movie entries"""
     result = find_duplicate_movies('movies.txt')
